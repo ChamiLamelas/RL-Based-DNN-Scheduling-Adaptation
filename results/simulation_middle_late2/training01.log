@@ -1,0 +1,74 @@
+2023-12-14 22:41:27,875 | [INFO] : training01 start time: 12/14/2023 10:41:27 PM
+2023-12-14 22:41:27,878 | [INFO] : Initialized model with weights: results/small_middle_late2/weights.pth
+2023-12-14 22:41:27,879 | [DEBUG] : Current model size: 10602 parameters
+2023-12-14 22:41:27,879 | [DEBUG] : Current training mode: initial
+2023-12-14 22:41:27,892 | [INFO] : GPU allocation changing : going up
+2023-12-14 22:41:27,895 | [DEBUG] : Current model size: 10602 parameters
+2023-12-14 22:41:27,895 | [DEBUG] : Current training mode: increased
+2023-12-14 22:41:27,897 | [INFO] : deepening layer 0/3: Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1))
+2023-12-14 22:41:27,897 | [DEBUG] : Model size was changed to 19914 parameters
+2023-12-14 22:41:27,897 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:41:37,995 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:41:39,941 | [DEBUG] : Current model size: 19914 parameters
+2023-12-14 22:41:39,941 | [DEBUG] : Current training mode: increased
+2023-12-14 22:41:39,943 | [INFO] : deepening layer 0/3: Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1))
+2023-12-14 22:41:39,943 | [DEBUG] : Model size was changed to 29226 parameters
+2023-12-14 22:41:39,943 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:41:50,178 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:41:51,991 | [DEBUG] : Current model size: 29226 parameters
+2023-12-14 22:41:51,992 | [DEBUG] : Current training mode: increased
+2023-12-14 22:41:51,993 | [INFO] : deepening layer 1/3: Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+2023-12-14 22:41:51,994 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:41:51,994 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:42:02,337 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:42:04,289 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:42:04,290 | [DEBUG] : Current training mode: increased
+2023-12-14 22:42:04,290 | [INFO] : no layers were added
+2023-12-14 22:42:04,290 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:42:04,290 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:42:14,658 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:42:16,618 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:42:16,618 | [DEBUG] : Current training mode: increased
+2023-12-14 22:42:16,619 | [INFO] : no layers were added
+2023-12-14 22:42:16,619 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:42:16,619 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:42:27,083 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:42:29,119 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:42:29,119 | [DEBUG] : Current training mode: increased
+2023-12-14 22:42:29,119 | [INFO] : no layers were added
+2023-12-14 22:42:29,119 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:42:29,119 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:42:39,528 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:42:41,576 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:42:41,576 | [DEBUG] : Current training mode: increased
+2023-12-14 22:42:41,576 | [INFO] : no layers were added
+2023-12-14 22:42:41,576 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:42:41,577 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:42:51,948 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:42:53,871 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:42:53,871 | [DEBUG] : Current training mode: increased
+2023-12-14 22:42:53,871 | [INFO] : no layers were added
+2023-12-14 22:42:53,872 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:42:53,872 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:43:04,319 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:43:06,241 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:43:06,241 | [DEBUG] : Current training mode: increased
+2023-12-14 22:43:06,241 | [INFO] : no layers were added
+2023-12-14 22:43:06,242 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:43:06,242 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:43:16,611 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:43:18,608 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:43:18,608 | [DEBUG] : Current training mode: increased
+2023-12-14 22:43:18,608 | [INFO] : no layers were added
+2023-12-14 22:43:18,609 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:43:18,609 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:43:28,972 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-14 22:43:30,827 | [DEBUG] : Current model size: 38538 parameters
+2023-12-14 22:43:30,827 | [DEBUG] : Current training mode: increased
+2023-12-14 22:43:30,827 | [INFO] : no layers were added
+2023-12-14 22:43:30,828 | [DEBUG] : Model size was changed to 38538 parameters
+2023-12-14 22:43:30,828 | [DEBUG] : Learning rate is now 0.010000
+2023-12-14 22:43:37,883 | [INFO] : training has run out of time
+2023-12-14 22:43:37,884 | [INFO] : training01 runtime (h:mm:ss): 0:02:11
+2023-12-14 22:43:37,884 | [INFO] : training01 end time: 12/14/2023 10:43:37 PM
+2023-12-14 22:43:37,884 | [INFO] : episode 2/64 finished, objective: None

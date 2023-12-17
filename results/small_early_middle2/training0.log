@@ -1,0 +1,45 @@
+2023-12-10 15:43:55,607 | [INFO] : training0 start time: 12/10/2023 03:43:55 PM
+2023-12-10 15:43:55,607 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:43:55,607 | [DEBUG] : Current training mode: initial
+2023-12-10 15:44:07,235 | [INFO] : New learning rate: 0.009000000000000001
+2023-12-10 15:44:08,963 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:44:08,963 | [DEBUG] : Current training mode: initial
+2023-12-10 15:44:18,550 | [INFO] : New learning rate: 0.008100000000000001
+2023-12-10 15:44:20,318 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:44:20,318 | [DEBUG] : Current training mode: initial
+2023-12-10 15:44:29,798 | [INFO] : New learning rate: 0.007290000000000001
+2023-12-10 15:44:31,572 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:44:31,572 | [DEBUG] : Current training mode: initial
+2023-12-10 15:44:41,158 | [INFO] : New learning rate: 0.006561000000000002
+2023-12-10 15:44:43,046 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:44:43,046 | [DEBUG] : Current training mode: initial
+2023-12-10 15:44:52,575 | [INFO] : New learning rate: 0.005904900000000002
+2023-12-10 15:44:54,329 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:44:54,329 | [DEBUG] : Current training mode: initial
+2023-12-10 15:45:03,743 | [INFO] : New learning rate: 0.005314410000000002
+2023-12-10 15:45:05,465 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:45:05,465 | [DEBUG] : Current training mode: initial
+2023-12-10 15:45:14,947 | [INFO] : New learning rate: 0.004782969000000002
+2023-12-10 15:45:16,762 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:45:16,762 | [DEBUG] : Current training mode: initial
+2023-12-10 15:45:26,292 | [INFO] : New learning rate: 0.004304672100000002
+2023-12-10 15:45:28,017 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:45:28,017 | [DEBUG] : Current training mode: initial
+2023-12-10 15:45:37,491 | [INFO] : New learning rate: 0.003874204890000002
+2023-12-10 15:45:39,408 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:45:39,408 | [DEBUG] : Current training mode: initial
+2023-12-10 15:45:48,839 | [INFO] : New learning rate: 0.003486784401000002
+2023-12-10 15:45:50,626 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:45:50,626 | [DEBUG] : Current training mode: initial
+2023-12-10 15:46:00,135 | [INFO] : New learning rate: 0.003138105960900002
+2023-12-10 15:46:02,072 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:46:02,072 | [DEBUG] : Current training mode: initial
+2023-12-10 15:46:11,661 | [INFO] : New learning rate: 0.0028242953648100018
+2023-12-10 15:46:13,435 | [DEBUG] : Current model size: 10602 parameters
+2023-12-10 15:46:13,435 | [DEBUG] : Current training mode: initial
+2023-12-10 15:46:14,927 | [INFO] : training has run out of time
+2023-12-10 15:46:14,928 | [INFO] : training0 runtime (h:mm:ss): 0:02:20
+2023-12-10 15:46:14,928 | [INFO] : training0 end time: 12/10/2023 03:46:14 PM
+2023-12-10 15:46:14,928 | [INFO] : episode 1/1 finished, objective: None
+2023-12-10 15:46:14,929 | [INFO] : learning runtime (h:mm:ss): 0:02:21
+2023-12-10 15:46:14,929 | [INFO] : learning end time: 12/10/2023 03:46:14 PM

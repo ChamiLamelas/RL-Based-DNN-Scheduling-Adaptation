@@ -1,0 +1,25 @@
+[runner]
+seed = 42
+total_episodes = 64
+folder = "simulation_early2"
+agent = "SimulationAgent"
+save = true 
+
+[scheduler]
+running_time = 400
+gpu_changes = [{ time = 70, change = "up" }]
+start_time = 70
+
+[trainer]
+weights = "results/small_early2/weights.pth"
+runtimes = "results/small_early2/runtimes"
+
+[job]
+model = "ConvNet2"
+dataset = "cifar10"
+
+[agent]
+device = 1
+action_set_size = 4
+num_actions = 3
+save_file = "results/simulation_early2/data.pkl"

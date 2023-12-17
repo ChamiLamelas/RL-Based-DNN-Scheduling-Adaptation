@@ -1,0 +1,15 @@
+[runner]
+seed = 42
+total_episodes = 1
+folder = "small_middle_late2"
+agent = "RandomAgent"
+
+[scheduler]
+running_time = 270
+
+[job]
+model = "ConvNet2"
+dataset = "cifar10"
+
+[agent]
+device = 0
