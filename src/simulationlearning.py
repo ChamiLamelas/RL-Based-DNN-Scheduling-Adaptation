@@ -111,7 +111,8 @@ def run(config, run_config, logger):
             actions.append(action)
             deepening.deepen_model(model, index=action)
             agt.save_prob()
-        agt.record_acc(sim.get_acc(actions))
+        acc = sim.get_acc(actions)
+        agt.record_acc(acc)
         obj = agt.update()
         if should_log(ep, log_freq):
             print(f"Learning rate: {agt.get_current_lr():.4e}", file=sys.stderr)
@@ -128,6 +129,7 @@ def run(config, run_config, logger):
         agt_logger.log_metrics(
             {"objective": obj}, "episode", agt.policy, bigger_better=False
         )
+        agt_logger.log_metrics({"accuracy": acc}, "episode")
     agt_logger.stop()
     agt_logger.permanentize_model("final")
 

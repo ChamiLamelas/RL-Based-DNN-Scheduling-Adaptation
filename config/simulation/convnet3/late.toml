@@ -11,8 +11,8 @@ gpu_changes = [{ time = 330, change = "up" }]
 start_time = 330
 
 [trainer]
-weights = "results/small_late3/weights.pth"
-runtimes = "results/small_late3/runtimes"
+weights = "../results/small_late3/weights.pth"
+runtimes = "../results/small_late3/runtimes"
 
 [job]
 model = "ConvNet3"
@@ -22,4 +22,4 @@ dataset = "cifar10"
 device = 0
 action_set_size = 4
 num_actions = 3
-save_file = "results/simulation_late3_v2/data.pkl"
+save_file = "../results/simulation_late3_v2/data.pkl"

@@ -5,7 +5,7 @@ folder = "simulation_late_learn2"
 agent = "Agent"
 
 [simulation]
-datafile = "results/simulation_late2/data.pkl"
+datafile = "../results/simulation_late2/data.pkl"
 
 [job]
 model = "ConvNet2"

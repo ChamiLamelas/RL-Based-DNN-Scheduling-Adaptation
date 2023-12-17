@@ -9,6 +9,7 @@ import toml
 import torch
 import deepening
 import tracing
+import sys
 
 
 def folder(f):
@@ -24,11 +25,23 @@ def get_args():
     parser.add_argument(
         "-m", "--modelfolder", type=folder, help="modelfolder", default=None
     )
+    parser.add_argument(
+        "--showstdout",
+        default=False,
+        type=bool,
+        help="show stdout or send it to file (default to file)",
+    )
     return parser.parse_args()
 
 
 def main():
     args = get_args()
+
+    old_stdout = sys.stdout
+    if not args.showstdout:
+        stdout_file = config["folder"].rstrip("/") + ".stdout"
+        sys.stdout = open(stdout_file, "w+")
+
     modelfolder = (
         args.evaluationfolder if args.modelfolder is None else args.modelfolder
     )
@@ -70,7 +83,7 @@ def main():
     actions = tuple(actions)
     no_adaptation = tuple([action_set_size - 1] * sim.get_num_actions())
 
-    max_rank_len = len(str(sim.get_acc_ranking()))
+    max_rank_len = len(str(len(sim.get_acc_ranking()) - 1))
 
     print("=== Ranking ===")
     print(
@@ -80,6 +93,8 @@ def main():
             for i, (k, v) in enumerate(sim.get_acc_ranking(), start=1)
         )
     )
+
+    sys.stdout = old_stdout
 
 
 if __name__ == "__main__":

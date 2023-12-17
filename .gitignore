@@ -1,6 +1,5 @@
 # Custom 
 data/
-*.stderr 
 *.pt
 
 # Byte-compiled / optimized / DLL files
