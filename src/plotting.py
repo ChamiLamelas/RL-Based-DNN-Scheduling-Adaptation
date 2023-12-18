@@ -333,7 +333,7 @@ def load_metrics(path):
 
 
 def objective_plot():
-    window_size = 50
+    window_size = 75
     for folder in AGENT_FOLDERS:
         folder = os.path.join(RESULTS, folder)
         _, ax = plt.subplots()
@@ -342,8 +342,10 @@ def objective_plot():
             objectives, np.ones(window_size) / window_size, mode="valid"
         )
         x = np.arange(len(objectives))
-        ax.plot(x, objectives, label="objective")
-        ax.plot(x[: -window_size + 1], mean_objectives, label="running mean")
+        ax.scatter(x, objectives, label="objective", marker='.')
+        ax.plot(
+            x[: -window_size + 1], mean_objectives, label="running mean", color="orange"
+        )
         make_plot_nice(
             ax,
             "Episode",
@@ -558,9 +560,9 @@ def acc_plot():
         xs = np.arange(len(baselines))
         ax.set_xticks(xs)
         ax.set_xticklabels(groupinfo["names"])
-        ax.scatter(xs, baselines, label="baseline", marker='+')
-        ax.scatter(xs, agents, label="agent", marker='x')
-        ax.scatter(xs, bests, label="best", marker='^')
+        ax.scatter(xs, baselines, label="baseline", marker="+")
+        ax.scatter(xs, agents, label="agent", marker="x")
+        ax.scatter(xs, bests, label="best", marker="^")
 
         make_plot_nice(
             ax,
