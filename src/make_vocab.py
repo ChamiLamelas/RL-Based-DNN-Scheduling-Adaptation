@@ -16,6 +16,7 @@ def main():
             models.FeedForwardNet(),
             models.FeedForwardNet2(),
             models.FeedForwardNet3(),
+            models.ConvNet3()
         ],
     )
     embedder = nn.Embedding(vocab.size(), 16)

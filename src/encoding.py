@@ -25,6 +25,29 @@ class NetworkEncoder(nn.Module):
 
 
 if __name__ == "__main__":
-    vocab = embedding.Vocabulary("test")
-    encoder = NetworkEncoder(vocab, 4, 16).to(gpu.get_device())
-    print(encoder(vocab.id(models.ConvNet()).to(gpu.get_device())).size())
+    vocab = embedding.Vocabulary("models")
+    encoder = NetworkEncoder(vocab, 16, 2).to(gpu.get_device())
+    print("2:")
+    print("embeddings:")
+    print(encoder.embedder(vocab.id(models.ConvNet2()).to(gpu.get_device())))
+    print("encodings")
+    print(encoder(vocab.id(models.ConvNet2()).to(gpu.get_device())))
+
+    print("3:")
+    print("embeddings:")
+    print(encoder.embedder(vocab.id(models.ConvNet3()).to(gpu.get_device())))
+    print("encodings")
+    print(encoder(vocab.id(models.ConvNet3()).to(gpu.get_device())))
+
+    # vocab = embedding.Vocabulary("models2")
+    # encoder = NetworkEncoder(vocab, 16, 2).to(gpu.get_device())
+    # print("2:")
+    # print("embeddings:")
+    # print(encoder.embedder(vocab.id(models.ConvNet2()).to(gpu.get_device())))
+    # print("encodings")
+    # print(encoder(vocab.id(models.ConvNet2()).to(gpu.get_device())))
+    # print("3:")
+    # print("embeddings:")
+    # print(encoder.embedder(vocab.id(models.ConvNet3()).to(gpu.get_device())))
+    # print("encodings")
+    # print(encoder(vocab.id(models.ConvNet3()).to(gpu.get_device())))

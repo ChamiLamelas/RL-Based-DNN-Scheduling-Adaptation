@@ -1,0 +1,37 @@
+Policy:
+Policy(
+  (encoder): NetworkEncoder(
+    (embedder): Embedding(13, 16)
+    (encoder): LSTM(16, 50, batch_first=True, bidirectional=True)
+  )
+  (decider): Decider2(
+    (lstm): LSTM(100, 16)
+    (linear1): Linear(in_features=24, out_features=128, bias=True)
+    (relu1): ReLU()
+    (linear2): Linear(in_features=128, out_features=128, bias=True)
+    (relu2): ReLU()
+    (linear3): Linear(in_features=128, out_features=4, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (softmax): Softmax(dim=1)
+)
+[INFO] : learning start time: 12/17/2023 10:30:56 PM
+==== episode 1/10000 ====
+Traceback (most recent call last):
+  File "./simulationlearning.py", line 149, in <module>
+    main()
+  File "./simulationlearning.py", line 144, in main
+    run(config, runner_config, logger)
+  File "./simulationlearning.py", line 99, in run
+    action, probs = agt.action(
+  File "/users/slamel01/RL-Based-DNN-Scheduling-Adaptation/src/agent.py", line 91, in action
+    probabilities = self.policy(state)
+  File "/users/slamel01/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/slamel01/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/slamel01/RL-Based-DNN-Scheduling-Adaptation/src/policy.py", line 35, in forward
+    all_encodings = self.encoder(self.vocab.id(state["model"]).to(self.device))
+  File "/users/slamel01/RL-Based-DNN-Scheduling-Adaptation/src/embedding.py", line 51, in id
+    raise RuntimeError(f"{key} does not have an ID in the vocabulary")
+RuntimeError: Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1)) does not have an ID in the vocabulary

@@ -16,6 +16,7 @@ import tracing
 import job
 import deepening
 import random
+import seed
 
 RESULTS = os.path.join("..", "results")
 PLOTS = os.path.join("..", "plots")
@@ -38,17 +39,68 @@ AGENT_FOLDERS = [
 ]
 
 ACC_AGENT_FOLDERS = {
-    "time_stages": {
-        "agentfolder": "simulation_early_to_middle_to_late_learn1",
+    "lme_all_convnet2": {
+        "agentfolder": "simulation_late_to_middle_to_early_learn2_1_1",
         "folders": [
-            "simulation_early",
-            "simulation_early_middle",
-            "simulation_middle",
-            "simulation_middle_late",
-            "simulation_late",
+            "simulation_early2",
+            "simulation_early_middle2",
+            "simulation_middle2",
+            "simulation_middle_late2",
+            "simulation_late2",
         ],
         "names": ["E", "E-M", "M", "M-L", "L"],
-    }
+    },
+    "elm_all_convnet2": {
+        "agentfolder": "simulation_early_to_late_to_middle_learn2_10_1",
+        "folders": [
+            "simulation_early2",
+            "simulation_early_middle2",
+            "simulation_middle2",
+            "simulation_middle_late2",
+            "simulation_late2",
+        ],
+        "names": ["E", "E-M", "M", "M-L", "L"],
+    },
+    "lem_some_convnet2": {
+        "agentfolder": "simulation_late_to_early_to_middle_learn2_1_1",
+        "folders": [
+            "simulation_early2",
+            "simulation_middle2",
+            "simulation_late2",
+        ],
+        "names": ["E", "M", "L"],
+    },
+    "eml_some_convnet2": {
+        "agentfolder": "simulation_early_to_middle_to_late_learn2_1_1",
+        "folders": [
+            "simulation_early2",
+            "simulation_middle2",
+            "simulation_late2",
+        ],
+        "names": ["E", "M", "L"],
+    },
+    "lme_all_convnet3": {
+        "agentfolder": "simulation_late_to_middle_to_early_learn2_1_1",
+        "folders": [
+            "simulation_early3_v2",
+            "simulation_early_middle3_v2",
+            "simulation_middle3_v2",
+            "simulation_middle_late3_v2",
+            "simulation_late3_v2",
+        ],
+        "names": ["E", "E-M", "M", "M-L", "L"],
+    },
+    "elm_all_convnet3": {
+        "agentfolder": "simulation_early_to_late_to_middle_learn2_10_1",
+        "folders": [
+            "simulation_early3_v2",
+            "simulation_early_middle3_v2",
+            "simulation_middle3_v2",
+            "simulation_middle_late3_v2",
+            "simulation_late3_v2",
+        ],
+        "names": ["E", "E-M", "M", "M-L", "L"],
+    },
 }
 
 GROUPED_AGENT_FOLDERS = {
@@ -59,7 +111,7 @@ GROUPED_AGENT_FOLDERS = {
         ],
         "comparison": "compare_exploration",
         "acc_min": 0.55,
-        "acc_max": 0.7
+        "acc_max": 0.7,
     },
     "early_to_middle_explorations": {
         "folders": [
@@ -70,7 +122,7 @@ GROUPED_AGENT_FOLDERS = {
         ],
         "comparison": "compare_exploration",
         "acc_min": 0.6,
-        "acc_max": 0.75
+        "acc_max": 0.75,
     },
     "middle_to_early_explorations": {
         "folders": [
@@ -79,7 +131,7 @@ GROUPED_AGENT_FOLDERS = {
         ],
         "comparison": "compare_exploration",
         "acc_min": 0.6,
-        "acc_max": 0.75
+        "acc_max": 0.75,
     },
     "middle_to_late_explorations": {
         "folders": [
@@ -88,7 +140,7 @@ GROUPED_AGENT_FOLDERS = {
         ],
         "comparison": "compare_exploration",
         "acc_min": 0.55,
-        "acc_max": 0.7
+        "acc_max": 0.7,
     },
     "late_to_early_transfer": {
         "folders": [
@@ -103,7 +155,7 @@ GROUPED_AGENT_FOLDERS = {
         "acc_jumpstart_pos": (5000, 0.5),
         "acc_time_to_threshold_pos": (3000, 0.6),
         "acc_min": 0.55,
-        "acc_max": 0.75
+        "acc_max": 0.75,
     },
     "late_to_middle_transfer": {
         "folders": [
@@ -118,7 +170,7 @@ GROUPED_AGENT_FOLDERS = {
         "acc_jumpstart_pos": (5000, 0.5),
         "acc_time_to_threshold_pos": (3000, 0.6),
         "acc_min": 0.55,
-        "acc_max": 0.75
+        "acc_max": 0.75,
     },
     "early_to_middle_transfer": {
         "folders": [
@@ -133,7 +185,7 @@ GROUPED_AGENT_FOLDERS = {
         "acc_jumpstart_pos": (5000, 0.5),
         "acc_time_to_threshold_pos": (3000, 0.6),
         "acc_min": 0.55,
-        "acc_max": 0.75
+        "acc_max": 0.75,
     },
     "early_to_late_transfer": {
         "folders": [
@@ -142,14 +194,14 @@ GROUPED_AGENT_FOLDERS = {
         ],
         "comparison": "transfer",
         "obj_threshold": 100,
-        "obj_jumpstart_pos": (5000, 200),
+        "obj_jumpstart_pos": (100, 110),
         "obj_time_to_threshold_pos": (3000, 20),
         "acc_threshold": 0.5,
         "acc_jumpstart_pos": (5000, 0.5),
         "acc_time_to_threshold_pos": (3000, 0.6),
         "acc_min": 0.55,
-        "acc_max": 0.75
-    }
+        "acc_max": 0.75,
+    },
 }
 
 EXTENSIONS = {"train": "train_acc", "test": "test_acc"}
@@ -305,7 +357,7 @@ def objective_plot():
 
 def get_name(folder, comparison):
     ending_digits = folder[folder.rindex("_") + 1 :]
-    if not folder[folder.rindex("_")+1].isdigit():
+    if not folder[folder.rindex("_") + 1].isdigit():
         if comparison == "compare_exploration" or comparison == "transfer":
             return "scratch"
         elif comparison == "compare_scenarios":
@@ -347,9 +399,7 @@ def grouped_plot():
         for folder in groupinfo["folders"]:
             name = get_name(folder, groupinfo["comparison"])
             folder = os.path.join(RESULTS, folder)
-            objectives = load_metrics(
-                os.path.join(folder, "agent.episode.objective")
-            )
+            objectives = load_metrics(os.path.join(folder, "agent.episode.objective"))
             x = np.arange(len(objectives))
             mean_objectives = np.convolve(
                 objectives, np.ones(window_size) / window_size, mode="valid"
@@ -392,19 +442,16 @@ def grouped_plot():
         )
         save(f"objective_{groupname}.png")
 
-
         _, ax = plt.subplots()
         starts = list()
         thresholds = list()
         for folder in groupinfo["folders"]:
             name = get_name(folder, groupinfo["comparison"])
             folder = os.path.join(RESULTS, folder)
-            accs = load_metrics(
-                os.path.join(folder, "agent.episode.accuracy")
-            )
+            accs = load_metrics(os.path.join(folder, "agent.episode.accuracy"))
             x = np.arange(len(accs))
             ax.plot(x, accs, label=name)
-            
+
             if "acc_threshold" in groupinfo:
                 starts.append(accs[0])
                 thresholds.append(
@@ -453,13 +500,10 @@ def acc_plot():
         config = toml.load(os.path.join(folder, "config.toml"))
 
         agt = agent.Agent(config)
-        agt.policy.load_state_dict(
-            torch.load(os.path.join(folder, "agent.finalmodel.pth"))
-        )
+        # agt.policy.load_state_dict(
+        #     torch.load(os.path.join(folder, "agent.finalmodel.pth"))
+        # )
         agt.eval()
-
-        model = job.Job(config).model
-        action_set_size = len(tracing.get_all_deepen_blocks(model)) + 1
 
         _, ax = plt.subplots()
         no_adaptations = list()
@@ -471,6 +515,9 @@ def acc_plot():
             folder = os.path.join(RESULTS, folder)
             config = toml.load(os.path.join(folder, "config.toml"))
             sim = simulation.Simulation(config)
+
+            model = job.Job(config).model
+            action_set_size = len(tracing.get_all_deepen_blocks(model)) + 1
 
             actions = list()
             for _ in range(sim.get_num_actions()):
@@ -511,9 +558,9 @@ def acc_plot():
         xs = np.arange(len(baselines))
         ax.set_xticks(xs)
         ax.set_xticklabels(groupinfo["names"])
-        ax.scatter(xs, baselines, label="baseline")
-        ax.scatter(xs, agents, label="agent")
-        ax.scatter(xs, bests, label="best")
+        ax.scatter(xs, baselines, label="baseline", marker='+')
+        ax.scatter(xs, agents, label="agent", marker='x')
+        ax.scatter(xs, bests, label="best", marker='^')
 
         make_plot_nice(
             ax,
@@ -527,11 +574,12 @@ def acc_plot():
 
 
 def main():
+    seed.set_seed(42)
     # random_plot()
     # agent_plot()
     objective_plot()
     grouped_plot()
-    # acc_plot()
+    acc_plot()
 
 
 if __name__ == "__main__":

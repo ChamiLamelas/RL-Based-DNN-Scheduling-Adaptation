@@ -42,7 +42,7 @@ class Vocabulary:
                     self.ids[key] = len(self.ids)
 
     def id(self, model):
-        ids = [NONE_LAYER_ID]
+        ids = []
         for layer in tracing.get_all_layers(model):
             key = str(layer)
             if key in self.ids:
@@ -68,11 +68,14 @@ class Vocabulary:
 
 
 if __name__ == "__main__":
-    vocab = Vocabulary("test", [models.ConvNet2()])
-    print(vocab.has_embeddings())
+    # vocab = Vocabulary("test", [models.ConvNet2()])
+    # print(vocab.has_embeddings())
 
-    embedder = nn.Embedding(vocab.size(), 4)
-    vocab.save(embedder.state_dict())
+    # embedder = nn.Embedding(vocab.size(), 4)
+    # vocab.save(embedder.state_dict())
 
-    vocab2 = Vocabulary("test")
-    print(vocab2.has_embeddings())
+    # vocab2 = Vocabulary("test")
+    # print(vocab2.has_embeddings())
+
+    vocab = Vocabulary("models")
+    

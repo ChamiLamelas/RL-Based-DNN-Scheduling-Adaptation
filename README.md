@@ -1,5 +1,11 @@
 # Reinforcement Learning Based Deep Neural Network Adaptation for Machine Learning Schedulers 
 
+Before trying to reproduce any results below (even if you're not on CloudLab), please make sure you have cloned this repository in its entirety (not just the code) with:
+
+```bash
+git clone git@github.com:ChamiLamelas/RL-Based-DNN-Scheduling-Adaptation.git
+```
+
 ## Prerequisites 
 
 ### Generating Results 
@@ -72,7 +78,6 @@ Go into `src/` and run:
 
 ```bash
 chmod +x *.py
-./make_vocab.py
 ```
 
 Note, it may be safe to only do this on Ubuntu 18.04 as that is the only platform we have tested on.
@@ -133,9 +138,10 @@ These run quickly and do not need to be run in a `screen`. You can find the rank
 
 We provide a table of which `.stdout` files in `results/` are used for each figure in our report.
 
-| Filename | Figure |
-| --- | --- | 
-| NEEDSWORK | NEEDSWORK |
+* Table NEEDSWORK is manually constructed by getting the ranking information from these files:
+```text
+
+```
 
 To obtain all plots, run (from `src/`): 
 
@@ -171,6 +177,7 @@ We provide a table of which files in `plots/` correspond to the figures in our r
 * `encoding.py`: Defines our layer encoder network.
 * `environment.py`: Defines our environment which is just a 2-tuple of a job and a scheduler.
 * `file_renaming.py`: Utility script having to do with how we manage our logs and model parameters.
+* `fix_vocab.py`: Another utility for setting up vocabularies.
 * `gpu.py`: Utilities for interacting with GPUs.
 * `heuristics.py`: Defines our simulation "agent" that can take a deterministic action sequence. 
 * `job.py`: Defines a job (model, dataset, time budget).
@@ -191,6 +198,8 @@ We provide a table of which files in `plots/` correspond to the figures in our r
 * `timeencoding.py`: Defines our time encoding function.
 * `tracing.py`: Defines our model architecture/layer tracing utilities. 
 * `training.py`: Defines our (trainer) training infrastructure.
+
+Do not run either `make_vocab.py` or `fix_vocab.py`, the vocab set up is a bit brittle and if you rerun these it could mess up evaluation and learning. 
 
 ## Contact
 

@@ -34,28 +34,54 @@ def get_args():
     return parser.parse_args()
 
 
+def get_name(evaluationfolder, modelfolder):
+    def shorten(foldername):
+        foldername = os.path.basename(foldername)
+        foldername = foldername.replace("simulation_", "")
+        foldername = foldername.replace("early_middle", "EM")
+        foldername = foldername.replace("middle_late", "ML")
+        foldername = foldername.replace("early", "E")
+        foldername = foldername.replace("middle", "M")
+        foldername = foldername.replace("late", "L")
+        foldername = foldername.replace("to_", "")
+        return foldername
+
+    return os.path.join(
+        "..",
+        "results",
+        shorten(modelfolder) + "_on_" + shorten(evaluationfolder) + ".stdout",
+    )
+
+
 def main():
     args = get_args()
-
-    old_stdout = sys.stdout
-    if not args.showstdout:
-        stdout_file = config["folder"].rstrip("/") + ".stdout"
-        sys.stdout = open(stdout_file, "w+")
 
     modelfolder = (
         args.evaluationfolder if args.modelfolder is None else args.modelfolder
     )
 
     config = toml.load(os.path.join(modelfolder, "config.toml"))
+
+    old_stdout = sys.stdout
+    if not args.showstdout:
+        stdout_file = (
+            get_name(args.evaluationfolder, modelfolder)
+        )
+        sys.stdout = open(stdout_file, "w+")
+
     agt = agent.Agent(config)
-    agt.policy.load_state_dict(
-        torch.load(os.path.join(modelfolder, "agent.finalmodel.pth"))
-    )
+    
+    # agt.policy.load_state_dict(
+    #     torch.load(os.path.join(modelfolder, "agent.finalmodel.pth"))
+    # )
     agt.eval()
-    model = job.Job(config).model
+
+    eval_config = toml.load(os.path.join(args.evaluationfolder, "config.toml"))
+
+    model = job.Job(eval_config).model
 
     sim = simulation.Simulation(
-        toml.load(os.path.join(args.evaluationfolder, "config.toml"))
+        eval_config
     )
 
     print(f"=== Model Folder ===\n{modelfolder}\n")
