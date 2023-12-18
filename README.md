@@ -122,7 +122,7 @@ To rerun all the learning experiments discussed in the report, run (from `script
 bash learn.sh
 ```
 
-These should also be run in a `screen` and should take less than 2 hours.
+These should also be run in a `screen` and should take less than 3 hours.
 
 ## Reproducing Figures 
 

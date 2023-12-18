@@ -88,17 +88,22 @@ cd ../src
 # ./simulationevaluation.py simulation_convnet2_1_to_early_learn3
 # ./simulationevaluation.py simulation_convnet2_1_to_middle_learn3
 # ./simulationevaluation.py simulation_convnet2_1_to_late_learn3
-./simulationevaluation.py simulation_convnet2_1_100_to_early_learn3
-./simulationevaluation.py simulation_convnet2_1_100_to_middle_learn3
-./simulationevaluation.py simulation_convnet2_1_100_to_late_learn3
+# ./simulationevaluation.py simulation_convnet2_1_100_to_early_learn3
+# ./simulationevaluation.py simulation_convnet2_1_100_to_middle_learn3
+# ./simulationevaluation.py simulation_convnet2_1_100_to_late_learn3
 
 # Evaluate E->L->M transfer to convnet3
 # ./simulationevaluation.py simulation_convnet2_2_to_early_learn3
 # ./simulationevaluation.py simulation_convnet2_2_to_middle_learn3
 # ./simulationevaluation.py simulation_convnet2_2_to_late_learn3
-./simulationevaluation.py simulation_convnet2_2_100_to_early_learn3
-./simulationevaluation.py simulation_convnet2_2_100_to_middle_learn3
-./simulationevaluation.py simulation_convnet2_2_100_to_late_learn3
+# ./simulationevaluation.py simulation_convnet2_2_100_to_early_learn3
+# ./simulationevaluation.py simulation_convnet2_2_100_to_middle_learn3
+# ./simulationevaluation.py simulation_convnet2_2_100_to_late_learn3
+
+# Evaluation scratch convnet3
+./simulationevaluation.py simulation_early_learn3
+./simulationevaluation.py simulation_middle_learn3
+./simulationevaluation.py simulation_late_learn3
 
 printf "end\t"
 env TZ=America/New_York date +"%m/%d/%Y %I:%M:%S %p"

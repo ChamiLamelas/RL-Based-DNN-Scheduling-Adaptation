@@ -1,0 +1,25 @@
+[runner]
+seed = 42
+total_episodes = 75000
+folder = "simulation_middle_learn3"
+agent = "Agent"
+
+[simulation]
+datafile = "../results/simulation_middle3_v2/data.pkl"
+
+[job]
+model = "ConvNet3"
+dataset = "cifar10"
+
+[agent]
+decay_freq = 500
+device = 0
+vocab = "models"
+alpha = 0.0001
+hidden_size = 50
+embedding_size = 16
+max_actions = 4
+decider_lstm_size = 16
+decider_linear_size = 128
+learning_rate_decay = 0.99
+time_encoding_size = 8

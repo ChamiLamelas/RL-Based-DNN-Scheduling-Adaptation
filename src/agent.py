@@ -53,15 +53,15 @@ class Agent(BaseAgent):
         super().__init__(config)
         self.policy = policy.Policy(self.config, self.device)
 
-        params_dict = torch.load(self.config["policyfile"])
-
-        for k in list(params_dict.keys()):
-            if "embedder.weight" in k:
-                del params_dict[k]
-
         if "policyfile" in self.config:
+            params_dict = torch.load(self.config["policyfile"])
+
+            for k in list(params_dict.keys()):
+                if "embedder.weight" in k:
+                    del params_dict[k]
+
             self.policy.load_state_dict(params_dict, strict=False)
-        
+
         self.gamma = self.config.get("gamma", 0.99)
         self.probabilities = None
         self.rewards = None

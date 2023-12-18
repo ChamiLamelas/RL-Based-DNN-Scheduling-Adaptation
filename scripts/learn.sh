@@ -50,17 +50,22 @@ cd ../src
 # ./simulationlearning.py ../config/simulation/convnet3/early_learn2.toml
 # ./simulationlearning.py ../config/simulation/convnet3/middle_learn2.toml
 # ./simulationlearning.py ../config/simulation/convnet3/late_learn2.toml
-./simulationlearning.py ../config/simulation/convnet3/early_learn2_100.toml
-./simulationlearning.py ../config/simulation/convnet3/middle_learn2_100.toml
-./simulationlearning.py ../config/simulation/convnet3/late_learn2_100.toml
+# ./simulationlearning.py ../config/simulation/convnet3/early_learn2_100.toml
+# ./simulationlearning.py ../config/simulation/convnet3/middle_learn2_100.toml
+# ./simulationlearning.py ../config/simulation/convnet3/late_learn2_100.toml
 
 # L->M->E transfer to convnet3
 # ./simulationlearning.py ../config/simulation/convnet3/early_learn1.toml
 # ./simulationlearning.py ../config/simulation/convnet3/middle_learn1.toml
 # ./simulationlearning.py ../config/simulation/convnet3/late_learn1.toml
-./simulationlearning.py ../config/simulation/convnet3/early_learn1_100.toml
-./simulationlearning.py ../config/simulation/convnet3/middle_learn1_100.toml
-./simulationlearning.py ../config/simulation/convnet3/late_learn1_100.toml
+# ./simulationlearning.py ../config/simulation/convnet3/early_learn1_100.toml
+# ./simulationlearning.py ../config/simulation/convnet3/middle_learn1_100.toml
+# ./simulationlearning.py ../config/simulation/convnet3/late_learn1_100.toml
+
+# Learn convnet3 from scratch 
+./simulationlearning.py ../config/simulation/convnet3/early_learn.toml
+./simulationlearning.py ../config/simulation/convnet3/middle_learn.toml
+./simulationlearning.py ../config/simulation/convnet3/late_learn.toml
 
 printf "end\t"
 env TZ=America/New_York date +"%m/%d/%Y %I:%M:%S %p"

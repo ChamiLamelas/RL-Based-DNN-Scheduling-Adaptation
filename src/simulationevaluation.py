@@ -64,25 +64,29 @@ def main():
 
     old_stdout = sys.stdout
     if not args.showstdout:
-        stdout_file = (
-            get_name(args.evaluationfolder, modelfolder)
-        )
+        stdout_file = get_name(args.evaluationfolder, modelfolder)
         sys.stdout = open(stdout_file, "w+")
 
+    if "policyfile" not in config["agent"]:
+        config["agent"]["policyfile"] = os.path.join(modelfolder, "agent.finalmodel.pth")
     agt = agent.Agent(config)
-    
+
     # agt.policy.load_state_dict(
-    #     torch.load(os.path.join(modelfolder, "agent.finalmodel.pth"))
+    #     torch.load()
     # )
     agt.eval()
 
     eval_config = toml.load(os.path.join(args.evaluationfolder, "config.toml"))
 
+    # model = job.Job(config).model
+
+    # print(model)
+
     model = job.Job(eval_config).model
 
-    sim = simulation.Simulation(
-        eval_config
-    )
+    print(model)
+
+    sim = simulation.Simulation(eval_config)
 
     print(f"=== Model Folder ===\n{modelfolder}\n")
     print(f"=== Evaluation Folder ===\n{args.evaluationfolder}")
