@@ -1,6 +1,6 @@
 # Reinforcement Learning Based Deep Neural Network Adaptation for Machine Learning Schedulers 
 
-This file is written in markdown and is best viewed [on GitHub](https://github.com/ChamiLamelas/RL-Based-DNN-Scheduling-Adaptation/blob/main/README.md).
+This file is written in markdown and is best viewed on GitHub here: https://github.com/ChamiLamelas/RL-Based-DNN-Scheduling-Adaptation/blob/main/README.md.
 
 ## !! IMPORTANT !!
 
