@@ -1,6 +1,10 @@
 # Reinforcement Learning Based Deep Neural Network Adaptation for Machine Learning Schedulers 
 
-Before trying to reproduce any results below (even if you're not on CloudLab), please make sure you have cloned this repository in its entirety (not just the code) with:
+## !! IMPORTANT !!
+
+If you only have access to the code, before trying to reproduce any results below 
+(even if you're not on CloudLab), please make sure you have cloned this repository in its entirety 
+(not just the code) with:
 
 ```bash
 git clone git@github.com:ChamiLamelas/RL-Based-DNN-Scheduling-Adaptation.git
