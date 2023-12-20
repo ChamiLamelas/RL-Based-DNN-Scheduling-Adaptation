@@ -1,5 +1,7 @@
 # Reinforcement Learning Based Deep Neural Network Adaptation for Machine Learning Schedulers 
 
+This file is written in markdown and is best viewed [on GitHub](https://github.com/ChamiLamelas/RL-Based-DNN-Scheduling-Adaptation/blob/main/README.md).
+
 ## !! IMPORTANT !!
 
 If you only have access to the code, before trying to reproduce any results below 
@@ -9,6 +11,8 @@ If you only have access to the code, before trying to reproduce any results belo
 ```bash
 git clone git@github.com:ChamiLamelas/RL-Based-DNN-Scheduling-Adaptation.git
 ```
+
+The entire repository is too large to submit on Canvas.
 
 ## Prerequisites 
 
@@ -142,10 +146,32 @@ These run quickly and do not need to be run in a `screen`. You can find the rank
 
 We provide a table of which `.stdout` files in `results/` are used for each figure in our report.
 
-* Table NEEDSWORK is manually constructed by getting the ranking information from these files:
-```text
+The table in figure 8a is manually constructed by getting the ranking information from these files:
 
-```
+| Row | Filename(s) | 
+| --- | --- | 
+| 1 | `E_L_learn2_1_on_E_L_learn2_1.stdout`, `E_L_learn2_10_on_E_L_learn2_10.stdout` |
+| 2 | `E_M_learn2_1_on_E_M_learn2_1.stdout`, `E_M_learn2_10_on_E_M_learn2_10.stdout`, `E_M_learn2_100_on_E_M_learn2_100.stdout`, `E_M_learn2_1000_on_E_M_learn2_1000.stdout` |
+| 3 | `M_E_learn2_1_on_M_E_learn2_1.stdout`, `M_E_learn2_10_on_M_E_learn2_10.stdout`, `M_E_learn2_100_on_M_E_learn2_100.stdout`, `M_E_learn2_1000_on_M_E_learn2_1000.stdout` |
+| 4 | `M_L_learn2_1_on_M_L_learn2_1.stdout`, `M_L_learn2_10_on_M_L_learn2_10.stdout`, `M_L_learn2_100_on_M_L_learn2_100.stdout`, `M_L_learn2_1000_on_M_L_learn2_1000.stdout` |
+| 5 | `L_E_learn2_1_on_L_E_learn2_1.stdout` |
+| 6 | `L_M_learn2_1_on_L_M_learn2_1.stdout` |
+
+The table in figure 12a is manually constructed by getting the ranking information from these files:
+
+| Row | Filename | 
+| --- | --- | 
+| 1 | `E_learn2_on_E_learn2.stdout` |
+| 2 | `M_learn2_on_M_learn2.stdout` |
+| 3 | `L_learn2_on_L_learn2.stdout` |
+
+The table in figure 12b is manually constructed by getting the ranking information from these files:
+
+| Row | Filename | 
+| --- | --- | 
+| 1 | `E_learn3_on_E_learn3.stdout` |
+| 2 | `M_learn3_on_M_learn3.stdout` |
+| 3 | `L_learn3_on_L_learn3.stdout` |
 
 To obtain all plots, run (from `src/`): 
 
@@ -157,9 +183,21 @@ This does not take too long and does not need a `screen`.
 
 We provide a table of which files in `plots/` correspond to the figures in our report.
 
-| Filename | Figure |
+| Figure | Filename |
 | --- | --- |
-| NEEDSWORK | NEEDSWORK |
+| Figures 1-6 | `N/A` - constructed manually |
+| Figure 7a | `objective_simulation_early_learn2.png` |
+| Figure 7b | `objective_simulation_middle_learn2.png` |
+| Figure 7c | `objective_simulation_late_learn2.png` |
+| Figure 8a | see above table information |
+| Figure 8b | `objective_early_to_late_transfer.png` |
+| Figure 9a | `objective_early_to_late_explorations.png` |
+| Figure 9b | `accuracy_early_to_late_explorations.png` |
+| Figure 10a | `acc_elm_all_convnet2.png` |
+| Figure 10b | `acc_lme_all_convnet2.png` |
+| Figure 11a | `acc_elm_all_convnet3.png` |
+| Figure 11b | `acc_lme_all_convnet3.png` |
+| Figure 12 | see above table information |
 
 ## Repository Contents 
 
