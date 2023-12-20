@@ -1,0 +1,106 @@
+ConvNet2(
+  (conv1): NormalizedConvolutionalNet2NetDeepenBlock(
+    (layers): Sequential(
+      (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (pool1): AvgPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0)
+  (conv2): NormalizedConvolutionalNet2NetDeepenBlock(
+    (layers): Sequential(
+      (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (finalpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): FeedForwardNet2NetDeepenBlock(
+    (layers): Sequential(
+      (0): Linear(in_features=32, out_features=10, bias=True)
+      (1): ReLU()
+    )
+  )
+)
+=== Model Folder ===
+../results/simulation_early_to_middle_learn2_1
+
+=== Evaluation Folder ===
+../results/simulation_early_to_middle_learn2_1
+=== Step 1 ===
+Action: 1
+Probabilities: 0.0731 0.9256 0.0011 0.0002
+
+=== Step 2 ===
+Action: 1
+Probabilities: 0.0049 0.9951 0.0000 0.0000
+
+=== Step 3 ===
+Action: 1
+Probabilities: 0.0038 0.9962 0.0000 0.0000
+
+=== Ranking ===
+rank 01: (0, 1, 0) 0.7348
+rank 02: (1, 0, 1) 0.7263
+rank 03: (1, 1, 0) 0.7223
+rank 04: (1, 0, 0) 0.7162
+rank 05: (0, 0, 0) 0.7135
+rank 06: (1, 3, 1) 0.7093
+rank 07: (0, 2, 1) 0.7077
+rank 08: (1, 2, 1) 0.7054
+rank 09: (0, 1, 1) 0.7033
+rank 10: (0, 0, 1) 0.703
+rank 11: (1, 2, 0) 0.7027
+rank 12: (2, 0, 1) 0.7003
+rank 13: (1, 0, 2) 0.6998
+rank 14: (3, 0, 1) 0.6978
+rank 15: (0, 3, 1) 0.6964
+rank 16: (1, 1, 2) 0.6945
+rank 17: (1, 1, 1) 0.6928 ***
+rank 18: (0, 3, 0) 0.6904
+rank 19: (2, 0, 0) 0.6898
+rank 20: (3, 1, 1) 0.6891
+rank 21: (2, 1, 0) 0.6874
+rank 22: (1, 0, 3) 0.6865
+rank 23: (2, 3, 1) 0.6852
+rank 24: (0, 1, 3) 0.6842
+rank 25: (3, 1, 0) 0.6832
+rank 26: (0, 1, 2) 0.683
+rank 27: (3, 0, 0) 0.681
+rank 28: (1, 3, 0) 0.6809
+rank 29: (0, 0, 3) 0.6802
+rank 30: (0, 2, 0) 0.6783
+rank 31: (2, 1, 2) 0.6783
+rank 32: (3, 2, 1) 0.6775
+rank 33: (1, 2, 2) 0.6774
+rank 34: (1, 3, 2) 0.6741
+rank 35: (3, 1, 3) 0.6738
+rank 36: (2, 1, 1) 0.6704
+rank 37: (2, 0, 3) 0.6676
+rank 38: (3, 3, 1) 0.6663
+rank 39: (1, 3, 3) 0.6653
+rank 40: (1, 2, 3) 0.6649
+rank 41: (3, 3, 0) 0.6644
+rank 42: (0, 2, 2) 0.6626
+rank 43: (2, 0, 2) 0.6602
+rank 44: (0, 0, 2) 0.6592
+rank 45: (3, 0, 3) 0.6586
+rank 46: (2, 2, 1) 0.6582
+rank 47: (3, 1, 2) 0.6575
+rank 48: (0, 3, 2) 0.6546
+rank 49: (3, 0, 2) 0.6465
+rank 50: (0, 2, 3) 0.6425
+rank 51: (1, 1, 3) 0.6417
+rank 52: (2, 1, 3) 0.6405
+rank 53: (3, 2, 0) 0.64
+rank 54: (2, 3, 0) 0.6375
+rank 55: (2, 2, 0) 0.636
+rank 56: (0, 3, 3) 0.634
+rank 57: (3, 2, 2) 0.6207
+rank 58: (2, 3, 3) 0.6197
+rank 59: (3, 3, 2) 0.6068
+rank 60: (3, 3, 3) 0.6045 ***
+rank 61: (2, 2, 3) 0.5928
+rank 62: (2, 2, 2) 0.5877
+rank 63: (2, 3, 2) 0.5787
+rank 64: (3, 2, 3) 0.5681
